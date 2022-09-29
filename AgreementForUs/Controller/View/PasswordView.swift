@@ -198,7 +198,7 @@ class PasswordView:UIView{
             mainLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 20),
             
             passwordStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            passwordStackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 35),
+            passwordStackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 30),
             passwordStackView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.06),
             passwordStackView.widthAnchor.constraint(equalTo: passwordStackView.heightAnchor, multiplier: 4, constant: 45),
         

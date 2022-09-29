@@ -122,6 +122,7 @@ extension MainController:CLLocationManagerDelegate{
                 hud.dismiss(animated: true)
                 resetAlarmPopup("위치정보 오류", "위치 정보를 가지고 올 수 없습니다. 위치를 조금만 이동하고 다시 시도해주세요")
             default:
+                hud.dismiss(animated: true)
                 resetAlarmPopup("위치정보 오류", "위치 정보를 가지고 올 수 없습니다. 핸드폰의 GPS 기능을 확인해주세요.")
             }
         }
