@@ -242,7 +242,6 @@ class AssistanceView:UIView{
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.secondaryLabel.cgColor
         backgroundColor = .white
-        
         tintColor = .systemBlue
   
         translatesAutoresizingMaskIntoConstraints = false

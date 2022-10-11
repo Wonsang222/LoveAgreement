@@ -22,8 +22,7 @@ class RecordViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        start()
-        
+//        start()
         tableView.backgroundColor = .white
         
         tableView.delegate = self
@@ -101,7 +100,8 @@ class RecordViewController:UIViewController{
 
 extension RecordViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array?.count ?? 1
+//        return array?.count ?? 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,10 +115,15 @@ extension RecordViewController:UITableViewDataSource{
             cell.label4.text = entitiy.lon
             return cell
         }
-        cell.label1.text = array![indexPath.row].stringDate
-        cell.label2.text = array![indexPath.row].peripheralName
-        cell.label3.text = array![indexPath.row].lat
-        cell.label4.text = array![indexPath.row].lon
+//        cell.label1.text = array![indexPath.row].stringDate
+//        cell.label2.text = array![indexPath.row].peripheralName
+//        cell.label3.text = array![indexPath.row].lat
+//        cell.label4.text = array![indexPath.row].lon
+        
+        cell.label1.text = "2022년 10월 04일 12시 16분"
+        cell.label2.text = "iPhone"
+        cell.label3.text = "38"
+        cell.label4.text = "127"
         return cell
     }
     
