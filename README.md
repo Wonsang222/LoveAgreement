@@ -24,7 +24,8 @@
 5. 교환한 데이터는 CoreData로 핸드폰에 저장하고, 이 데이터를 확인할 수 있음.
 
 ## 프로젝트 사진
-![1](https://user-images.githubusercontent.com/92086662/201170518-10dbe90f-9440-4e9c-8249-d3f5657e4da0.gif)
+![11](https://user-images.githubusercontent.com/92086662/201171185-e7ee3fde-5040-4b1a-bfac-0f7a79d8cd1e.gif)
+
 
 
 ## 회고
