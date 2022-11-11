@@ -59,8 +59,8 @@ Peripheral(주변기기)에 대한 코드.
 ```
   
 CentralManager에 대한 코드
-  주변에 있는 특정 uuid를 지닌 service를 검색하고, 연결해서 해당 기기의 이름과 데이터(위도, 경도)를 저장합니다.#
-  저장이 성공했다면, RecordViewController에 해당 데이터를 입력하여 화면에 보여줍니다.#
+  주변에 있는 특정 uuid를 지닌 service를 검색하고, 연결해서 해당 기기의 이름과 데이터(위도, 경도)를 저장합니다.  
+  저장이 성공했다면, RecordViewController에 해당 데이터를 입력하여 화면에 보여줍니다.
 ``` Swift
   extension CentralController:CBCentralManagerDelegate{
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -114,9 +114,9 @@ extension CentralController:CBPeripheralDelegate{
 
 <img src="https://user-images.githubusercontent.com/92086662/201249064-e7e09c19-61b6-444b-b7b2-3c96ce4e12ec.PNG" width="375" height="667">
 
-간단 로그인 기능.#
-UserDefault를 사용하여, 첫 로그인시 비밀번호를 저장하고 사용합니다.#
-지문인식 기능을 처음부터 넣으려고 했으나, 카카오 페이나 네이버 페이 등의 디자인을 참고하여 비밀번호 시스템을 스스로 만들어 보고 싶었습니다.#
+간단 로그인 기능.
+UserDefault를 사용하여, 첫 로그인시 비밀번호를 저장하고 사용합니다.  
+지문인식 기능을 처음부터 넣으려고 했으나, 카카오 페이나 네이버 페이 등의 디자인을 참고하여 비밀번호 시스템을 스스로 만들어 보고 싶었습니다.
 
 <details>
 <summary>코드보기</summary>
