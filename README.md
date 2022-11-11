@@ -166,6 +166,10 @@ count 와 count2는 카운터로서, 비밀번호 4자리에 대응을 위함입
 
 </details>
 
+## 결말
+<img src="https://user-images.githubusercontent.com/92086662/201255662-2e410765-9e6b-4e35-9acd-ca06fe1a1d4a.PNG" width="375" height="667">
+법적 동의서는 철회의 가능성을 내포하고 있고, 
+
 ## 회고
 1. 앱스토어에 없는덴 다 이유가 있다.
 2. 가이드 라인을 읽어보는 계기가 되었다.
