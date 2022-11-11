@@ -27,10 +27,10 @@
 ## 프로젝트 사진
 ![11](https://user-images.githubusercontent.com/92086662/201171185-e7ee3fde-5040-4b1a-bfac-0f7a79d8cd1e.gif)
 
-앱이 시작되면 메인화면에서 현재의 위도와 경도를 저장하고 계약서 전송 컨트롤러로 데이터를 넘깁니다.#
-계약서 전송 컨트롤러에서는 CentralMnager와 Peripheral의 기능을 동시에 수행합니다.#
-계약 전송 View에 접근하면, 동일한 uuid를 지니고 가까이 있는 기기를 찾아서 자도 연결을하는 동시에(CentralManager)#
-uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(Peripheral) 역할을 수행합니다.#
+앱이 시작되면 메인화면에서 현재의 위도와 경도를 저장하고 계약서 전송 컨트롤러로 데이터를 넘깁니다.  
+계약서 전송 컨트롤러에서는 CentralMnager와 Peripheral의 기능을 동시에 수행합니다.  
+계약 전송 View에 접근하면, 동일한 uuid를 지니고 가까이 있는 기기를 찾아서 자도 연결을하는 동시에(CentralManager)  
+uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(Peripheral) 역할을 수행합니다.
 
 
 <details>
