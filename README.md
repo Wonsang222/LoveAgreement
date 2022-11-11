@@ -112,7 +112,7 @@ extension CentralController:CBPeripheralDelegate{
 
 </details>
 
-<img src="https://user-images.githubusercontent.com/92086662/201249064-e7e09c19-61b6-444b-b7b2-3c96ce4e12ec.PNG" width="375" height="667">
+![2](https://user-images.githubusercontent.com/92086662/201252869-04b49faf-ec82-473a-ae8c-1516ad1246c0.gif)
 
 간단 로그인 기능.
 UserDefault를 사용하여, 첫 로그인시 비밀번호를 저장하고 사용합니다.  
