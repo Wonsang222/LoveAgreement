@@ -120,7 +120,8 @@ UserDefault를 사용하여, 첫 로그인시 비밀번호를 저장하고 사�
 
 <details>
 <summary>코드보기</summary>
-PasswordController의 전반적인 동작 흐름입니다.
+PasswordController의 전반적인 동작 흐름입니다.  
+첫 로그인시, 비밀번호를 2번 입력하며, 동일하 경우에 UserDefault에 저장이 됩니다.  
 
 ``` Swift
 func start(){
