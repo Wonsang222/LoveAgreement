@@ -36,7 +36,7 @@ uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(
 <details>
 <summary>코드보기</summary>
 
-'''
+'''Swift
   extension CentralController:CBPeripheralManagerDelegate{
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         
