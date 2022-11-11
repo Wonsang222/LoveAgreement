@@ -27,7 +27,7 @@
 ## 프로젝트 사진
 ![11](https://user-images.githubusercontent.com/92086662/201171185-e7ee3fde-5040-4b1a-bfac-0f7a79d8cd1e.gif)
 
-앱이 시작되면 메인화면에서 현재의 위도오 경도를 저장하고 계약서 전송 컨트롤러로 데이터를 넘깁니다.
+앱이 시작되면 메인화면에서 현재의 위도와 경도를 저장하고 계약서 전송 컨트롤러로 데이터를 넘깁니다.
 계약서 전송 컨트롤러에서는 CentralMnager와 Peripheral의 기능을 동시에 수행합니다.
 계약 전송 View에 접근하면, 동일한 uuid를 지니고 가까이 있는 기기를 찾아서 자도 연결을하는 동시에(CentralManager) 
 uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(Peripheral) 역할을 수행합니다.
@@ -36,6 +36,8 @@ uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(
 <details>
 <summary>코드보기</summary>
 
+Peripheral(주변기기)에 대한 코드.
+메인 컨트롤러에서 전달받은 위치와 경도를 특정 uuid에 담ㅇ 전송
 ``` Swift
   extension CentralController:CBPeripheralManagerDelegate{
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
@@ -55,6 +57,59 @@ uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(
     }
 }
 ```
+  
+CentralManager에 대한 코드
+  주변에 있는 특정 uuid를 지닌 service를 검색하고, 연결해서 해당 기기의 이름과 데이터(위도, 경도)를 저장합니다.
+``` Swift
+  extension CentralController:CBCentralManagerDelegate{
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn{
+            central.scanForPeripherals(withServices: [TransferService.serviceUUID])
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        guard RSSI.intValue >= -50 else {return}
+        pendingPeripheral = peripheral
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        peripheral.discoverServices([TransferService.serviceUUID])
+        
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        guard let services = peripheral.services else {return}
+        for service in services{
+            pendingPeripheral?.discoverCharacteristics([TransferService.rxCharacterUUID], for: service)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        
+        guard let charac = service.characteristics else {return}
+        for characteristic in charac where characteristic.uuid == TransferService.rxCharacterUUID{
+            pendingPeripheral?.readValue(for: characteristic)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        guard let value = characteristic.value else {return}
+        let str = String(decoding: value, as: UTF8.self)
+        let toShowData = decodeString(str)
+        saveAgreement()
+        let nextController = RecordViewController(entitiy: toShowData)
+        navigationController?.pushViewController(nextController, animated: true)
+    }
+}
+
+extension CentralController:CBPeripheralDelegate{
+    
+}
+```
+  
+  
   
 
 </details>
