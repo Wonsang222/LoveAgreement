@@ -37,7 +37,7 @@ uuid와 현재 본인의 위도, 경도를 characteristic으로 promoting하는(
 <summary>코드보기</summary>
 
 Peripheral(주변기기)에 대한 코드.
-메인 컨트롤러에서 전달받은 위치와 경도를 특정 uuid에 담ㅇ 전송
+메인 컨트롤러에서 전달받은 위치와 경도를 특정 uuid에 담아 전송
 ``` Swift
   extension CentralController:CBPeripheralManagerDelegate{
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
@@ -60,6 +60,7 @@ Peripheral(주변기기)에 대한 코드.
   
 CentralManager에 대한 코드
   주변에 있는 특정 uuid를 지닌 service를 검색하고, 연결해서 해당 기기의 이름과 데이터(위도, 경도)를 저장합니다.
+  저장이 성공했다면, RecordViewController에 해당 데이터를 입력하여 화면에 보여줍니다.
 ``` Swift
   extension CentralController:CBCentralManagerDelegate{
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -108,9 +109,6 @@ extension CentralController:CBPeripheralDelegate{
     
 }
 ```
-  
-  
-  
 
 </details>
 
